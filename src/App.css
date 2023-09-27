@@ -1,0 +1,127 @@
+#root {
+  /* max-width: 1280px; */
+  margin: 0 auto;
+  padding: 0rem;
+  /* font-family: sans-serif roboto ; */
+  /* text-align: center; */
+}
+
+.logo {
+  /* height: 6em; */
+  padding: 1em 0;
+  will-change: filter;
+
+  transition: filter 300ms;
+}
+.logo a{
+  font-size:20px;
+  font-weight:600;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+.logo p{
+  display: none;
+}
+.about-greenslate{
+  display:none;
+}
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+
+.test-after::after{
+  content: '';
+  height: 3px;
+  background-color:blue;
+  width: 0;
+  position: absolute;
+  margin-left: -250px;
+  margin-top: 35px;
+  transition: 1s;
+
+}
+.test-after:hover:after{
+  width: 240px; 
+}
+
+
+
+  @media (max-width : 700px ) {
+    .navcontainer {
+      border-radius: 24px;
+      margin : 3px 13px;
+      max-width: 420px;
+      justify-content: flex-start;
+      min-height: 100vh;
+    }
+    .logo{
+      align-self: center;
+    }
+    .logo p{
+      color: #fff;
+      display: block;
+      font-size:14px;
+    }
+    
+    .devider{
+      width: 380px;
+      align-self: center;
+     
+    }
+    .navlinkscontainer{
+      margin-left:30px;
+      margin-top: 30px;
+      justify-content: space-between;
+      align-items: flex-start;
+      
+    }
+    .navlinks{
+      font-size:20px;
+    }
+
+
+    .about-greenslate{
+      display:inline-block;
+      align-self:center;
+    }
+    .about-greenslate p{
+      color: #fff;
+      margin:15px 65px;
+      display: block;
+      font-size:12px;
+      text-align:left;
+    }
+    .social-icons{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:5px;
+
+    }
+    }
+  
