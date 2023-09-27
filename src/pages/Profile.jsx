@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Select from 'react-select'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
@@ -19,23 +19,36 @@ function Profile() {
   { value: '2023', label: '2023' },
 ]
 
+const [clicked, setclicked] = useState(false)
+
+const handleClick = () => {
+  setclicked(!clicked)
+
+}
+const clickStyle = {
+  backgroundColor: 'red'
+}
+
   return (
     <>
-    {/* <Header /> */}
+ <Header />
     <div>
         <div className="profile-top flex justify-between m-3" >
            <p className='text-3xl '>MyProfile</p>
-           <div className='bg-white rounded-full p-3 shadow shadow-blue-500/50'>
-
+           <div onClick={ ()=> {
+            handleClick()
+           }} 
+           style={clickStyle} className='bg-white rounded-full p-3 shadow shadow-blue-500/50'>
            <CiMenuKebab className='text-black text-2xl'/>
            </div>
+
         </div>
         <div>
         <img src={testImage} alt="test" className='rounded-full h-40 w-40 mx-auto shadow shadow-blue-500/50'/>
         <p className='text-center text-2xl'>@collinscmondi</p>
         <p className='text-center text-sm'>Nairobi, Kenya</p>
 
-        <div className='flex flex-row justify-between mx-3 my-5'>
+        <div className='flex flex-row justify-between mx-3 my-10'>
             <p className='text-left text-2xl'>Your Statistics</p>
             
           <Select className='text-black' options={options}/>
@@ -44,12 +57,13 @@ function Profile() {
         <div className='m-4 rounded-xl bg-[#e4f6ea]'>
         <div style={{display:'flex', flexDirection:'row', justifyContent:'space-between', alignItems:'center'}} className='gap-4  '>
 
-          <div className='bg-[#254936] rounded-2xl px-4 py-2 m-3'>
+          <div style={{display:'flex', flexDirection:'row', gap:'5px'}}  className='bg-[#254936] rounded-2xl px-4 py-2 m-3'>
           <FaBottleWater style={{color:'white', rotate:'-40deg', fontSize:'23px' }} className='  '/>
+          <p className='text-white'>Plastic</p>
           </div>
 
           <div className='m-3'>
-          <p  className='text-[#254936] text-xl'>12,30 Kg</p>
+          <p  className='text-[#254936] text-xl'>3.00 Kg</p>
           </div>
 
           
@@ -60,13 +74,13 @@ function Profile() {
 
         <div style={{display:'flex', flexDirection:'row', justifyContent:'space-between', alignItems:'center'}} className='gap-4  '>
 
-          <div style={{display:'flex', flexDirection:'row'}} className='bg-[#254936] rounded-2xl px-4 py-2 m-3'>
+          <div style={{display:'flex', flexDirection:'row', gap:'5px'}} className='bg-[#254936] rounded-2xl px-4 py-2 m-3'>
           <GiMetalBar style={{color:'white', rotate:'-40deg', fontSize:'23px' }} className='  '/>
           <p className='text-white'>Metal</p>
           </div>
 
           <div className='m-3'>
-          <p  className='text-[#254936] text-xl'>12,30 Kg</p>
+          <p  className='text-[#254936] text-xl'>12.30 Kg</p>
           </div>
 
           
@@ -76,12 +90,13 @@ function Profile() {
         </div> 
         <div style={{display:'flex', flexDirection:'row', justifyContent:'space-between', alignItems:'center'}} className='gap-4  '>
 
-          <div className='bg-[#254936] rounded-2xl px-4 py-2 m-3'>
+          <div style={{display:'flex', flexDirection:'row', gap:'5px'}}  className='bg-[#254936] rounded-2xl px-4 py-2 m-3'>
           <GiBrokenBottle style={{color:'white', fontSize:'23px' }} className='  '/>
+          <p className='text-white'>Glass</p>
           </div>
 
           <div className='m-3'>
-          <p  className='text-[#254936] text-xl'>12,30 Kg</p>
+          <p  className='text-[#254936] text-xl'>10.00 Kg</p>
           </div>
 
           
